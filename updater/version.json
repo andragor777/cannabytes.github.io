@@ -1,6 +1,9 @@
 {
-  "version": 0.0.1,
-   "mirrors": [
-    "https://cannabytes.github.io/updater/launcher.exe", 
-  ],
+  "version": 0.1,
+   "launcher": [
+    "https://cannabytes.github.io/updater/launcher.exe"
+  ], 
+   "selfupdater": [
+    "https://cannabytes.github.io/updater/selfupdater.exe"
+  ] 
 }
