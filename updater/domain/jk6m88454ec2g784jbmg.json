@@ -1,14 +1,5 @@
 {
-    "list": {
-        "0": "https://warsong.xyz/update/clients.csv"
-    },
-    "storage": {
-        "0": "https://warsong.xyz/update/"
-    },
-    "l2app": {
-        "0": {
-            "app": "/system/l2.exe",
-            "buttonName": "launch_game"
-        }
-    }
+    "list": "https://warsong.xyz/update/clients.csv",
+    "storage": "https://warsong.xyz/update/",
+    "l2app": "/system/l2.exe"
 }
