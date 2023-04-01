@@ -1,4 +1,4 @@
-callbackFunction({
+{
     "list": {
         "0": "https://warsong.xyz/update/clients.csv"
     },
@@ -11,4 +11,4 @@ callbackFunction({
             "buttonName": "launch_game"
         }
     }
-});
+}
