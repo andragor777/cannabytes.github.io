@@ -1,0 +1,6 @@
+{
+    "list": "http://update/client.db",
+    "storage": "http://update/",
+    "l2app": "/system/l2.exe",
+	"enabled": true
+}
