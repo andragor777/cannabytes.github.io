@@ -1,9 +1,4 @@
 {
-  "version": 0.1,
-   "launcher": [
-    "https://cannabytes.github.io/updater/launcher.exe"
-  ], 
-   "selfupdater": [
-    "https://cannabytes.github.io/updater/selfupdater.exe"
-  ] 
+  "actualVersion": 0.1,
+  "launcher": "https://cannabytes.github.io/updater/launcher.exe"
 }
