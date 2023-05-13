@@ -1,6 +1,6 @@
 {
-    "list": "https://warsong.xyz/update/client.db",
-    "storage": "https://warsong.xyz/update/",
-    "l2app": "/system/l2.exe",
-	"enabled": true
+    "list": "http://patch/client.csv",
+    "storage": "http://patch/files/",
+    "l2app": "/l2.exe",
+    "enabled": true
 }
