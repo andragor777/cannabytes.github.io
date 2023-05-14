@@ -1,6 +1,5 @@
 {
     "list": "http://patch/client.csv",
     "storage": "http://patch/files/",
-    "l2app": "/l2.exe",
     "enabled": true
 }
