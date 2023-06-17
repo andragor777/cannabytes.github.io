@@ -1,5 +1,5 @@
 {
-    "list": "http://anygame.eu.org/client/client.csv",
-    "storage": "http://anygame.eu.org/client/",
+    "list": "http://localhost/patch/client.csv",
+    "storage": "http://localhost/patch/",
     "enabled": true
 }
