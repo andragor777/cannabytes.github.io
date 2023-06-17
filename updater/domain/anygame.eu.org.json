@@ -1,5 +1,5 @@
 {
-    "list": "https://anygame.eu.org/client/client.csv",
-    "storage": "https://anygame.eu.org/client/",
+    "list": "http://app/client.csv",
+    "storage": "http://app/",
     "enabled": true
 }
