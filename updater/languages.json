@@ -1,5 +1,5 @@
 {
-  "version": 0.1,
+  "version": 0.2,
   "data" : {
     "ru": {
       "1": "Уже идет загрузка",
@@ -17,7 +17,9 @@
       "13": "Ошибка при проверке папки %s: %s",
       "14": "Файлы игры и файлы клиента - разные. Необходимо обновиться.",
       "15": "Вы прислали пустую команду",
-      "16": "Ошибка чтения json запроса"
+      "16": "Ошибка чтения json запроса",
+	  "17": "Выключить",
+	  "18": "Открыть сайт"
     },
     "en": {
       "1": "Loading is already in progress",
@@ -35,25 +37,9 @@
       "13": "Error checking folder %s: %s",
       "14": "Game files and client files are different. An update is required.",
       "15": "You sent an empty command",
-      "16": "Error reading JSON request"
-    },
-    "br": {
-      "1": "O carregamento já está em andamento",
-      "2": "O servidor não está autorizado a usar o lançador",
-      "3": "Nenhuma atualização é necessária",
-      "4": "Iniciando a atualização",
-      "5": "Contando os arquivos de atualização necessários",
-      "6": "Você precisa atualizar %d arquivos",
-      "7": "Download forçado interrompido",
-      "8": "Atualização concluída com sucesso",
-      "9": "Erro de atualização: StatusCode %d recebido ao tentar baixar o arquivo %s",
-      "10": "Ocorreu um erro durante o download do arquivo",
-      "11": "O jogo foi iniciado",
-      "12": "A pasta %s não existe",
-      "13": "Erro ao verificar a pasta %s: %s",
-      "14": "Arquivos do jogo e arquivos do cliente são diferentes. Uma atualização é necessária.",
-      "15": "Você enviou um comando vazio",
-      "16": "Erro na leitura da solicitação JSON"
+      "16": "Error reading JSON request",
+	  "17": "Turn off",
+	  "18": "Open site"
     },
     "es": {
       "1": "La carga ya está en curso",
@@ -71,7 +57,9 @@
       "13": "Error al verificar la carpeta %s: %s",
       "14": "Archivos del juego y archivos del cliente son diferentes. Se requiere una actualización.",
       "15": "Has enviado un comando vacío",
-      "16": "Error al leer la solicitud JSON"
+      "16": "Error al leer la solicitud JSON",
+	  "17": "Apagar",
+	  "18": "Sitio abierto"
     }
   }
 }
