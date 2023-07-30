@@ -1,0 +1,14 @@
+{
+  "domain": "https://meserver.com",
+  "id": 1,
+  "chronicle": "High Five",
+  "rateExp": 1200,
+  "forumLink": "http://example.com/",
+  "registrationLink": "http://example.com/",
+  "descriptionLink": "http://example.com/",
+  "l2exe": "/system/l2.exe",
+  "args": "",
+  "list": "https://anygame.eu.org/patch/client.csv",
+  "storage": "https://anygame.eu.org/patch/",
+  "enabled": true
+}

@@ -1,355 +1,909 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title></title>
 
-  <title>WebLauncher</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <meta name="description" content="Web-Launcher">
+    <meta name="author" content="Logan22">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <meta property="og:title" content="Web-Launcher">
+    <meta property="og:site_name" content="Codebase">
+    <meta property="og:description" content="Web-Launcher for game">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/media/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" id="css-main" href="assets/css/codebase.min.css">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
- 
-</head>
+    <style>
 
-<body>
+      figure {
+        cursor: pointer;
+        display: inline-block;
+        max-width: 100%;
+        text-align: center;
+        margin-right: 10px; /* Задайте желаемое значение для расстояния между изображениями */
+      }
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+      figure:hover .name {
+        color: red; /* Задайте желаемый цвет текста при наведении */
+      }
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+      figcaption {
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal;
+      }
 
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">WebLauncher</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a target="_blank" href="https://t.me/Cannabytes" class="telegram"><i class="bx bxl-telegram"></i></a>
+      figcaption.name {
+        max-width: 80px; /* Задайте желаемую ширину для обрезки текста */
+        white-space: nowrap; /* Запретить перенос текста на новую строку */
+        overflow: hidden; /* Скрыть выходящий за пределы области текст */
+        text-overflow: ellipsis; /* Добавить многоточие (...) для обозначения обрезанного текста */
+      }
+
+      figcaption.name:hover {
+        color: red; /* Задайте желаемый цвет текста при наведении */
+      }
+
+      .linkdir:hover {
+        color: red;
+        cursor: pointer;
+      }
+
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="page-container" class="sidebar-dark side-scroll page-header-fixed page-header-dark main-content-boxed dark-mode">
+<!--    <div id="page-container" class="sidebar-dark side-scroll page-header-fixed page-header-dark main-content-boxed">-->
+      <!-- Side Overlay-->
+      <aside id="side-overlay">
+        <!-- Side Header -->
+        <div class="content-header">
+          <!-- User Avatar -->
+          <a class="img-link me-2" href="be_pages_generic_profile.html">
+            <img class="img-avatar img-avatar32" src="assets/media/avatars/avatar15.jpg" alt="">
+          </a>
+          <!-- END User Avatar -->
+
+          <!-- User Info -->
+          <a class="link-fx text-body-color-dark fw-semibold fs-sm" href="be_pages_generic_profile.html">
+            John Smith
+          </a>
+          <!-- END User Info -->
+
+          <!-- Close Side Overlay -->
+          <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+          <button type="button" class="btn btn-sm btn-alt-danger ms-auto" data-toggle="layout" data-action="side_overlay_close">
+            <i class="fa fa-fw fa-times"></i>
+          </button>
+          <!-- END Close Side Overlay -->
         </div>
-      </div>
+        <!-- END Side Header -->
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Главная</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-book-reader"></i> <span>Описание</span></a></li>
-          <li><a href="#download" class="nav-link scrollto"><i class="bx bx-cloud-download"></i> <span>Скачать</span></a></li>
-          <li><a href="#newFunc" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Новвоведения</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Контакт</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>WebLauncher</h1>
-      <p>Я - <span class="typed" data-typed-items="быстрый, гибкий, конкурентный, многозадачный, простой и невидимый"></span></p>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>WebLauncher</h2>
-          <li>Это легковесное ПО для загрузки файлов клиента, является встроенной в CMS с открытым исходным кодом - SphereWeb.</li>
-          <br>
-          <li>Единажды скаченный лаунчер, подойдет для всех аккредитованных серверов на CMS SphereWeb.</li>
-          <br>
-          <li>Лаунчер для обновления игры, является мощным инструментом благодаря использованию передовых технологий.</li>
-          <br>
-          <li>Программа основана на принципах многопоточности, конкурентности и других возможностях. Это позволяет лаунчеру скачивать файлы одновременно и много, обеспечивая быструю обработку и эффективное использование ресурсов компьютера.</li>
-          <br>
-          <li>Одним из главных преимуществ лаунчера является использование передовой технологии, которая позволяет работать с ней в браузере. Это делает использование лаунчера удобным и доступным для всех пользователей.</li>
-          <br>
-          <li>Еще одним важным преимуществом вашего лаунчера является то, что он не потребляет много памяти и работает быстрее, чем его конкуренты. Это обеспечивает более быструю и эффективную работу лаунчера и повышает удобство его использования.</li>
-          <br>
-          <li>Кроме того, ваш лаунчер позволяет пользователям использовать только один лаунчер для всех серверов и всех хроник, что значительно упрощает и ускоряет процесс обновления игры.</li>
-          <br>
-          <li>Пользователю не придется загружать для каждого сервера лаунчер, достаточно зайти на сайт сервера.</li>
-          <br>
-          <li>В целом, лаунчер - это мощный и удобный инструмент для обновления игры, который предлагает передовые технологии и обеспечивает быструю и эффективную работу.</li>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Как всё работает?</h2>
-          <p>
-            После того как Вы скачаете лаунчер и запустите его, лаунчер сможет принимать и обрабатывать команды в реал-тайме.
-          </p>
-          <p>Лаунчер создаст протокол для удобного запуска из браузера.</p>
-          <p>Для этого на сайте сервера есть интерфейс для обновления, он Вам доступен и все его возможности.</p>
-        </div>
-
-
-      </div>
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Улучшения</h2>
-          <p>Сравнительные коэффициенты с другими лаунчерами</p>
-        </div>
-        <hr>
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-            <p>Архивации</p>
-            <div class="progress">
-              <span class="skill">WebLauncher <i class="val">86</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+        <!-- Side Content -->
+        <div class="content-side">
+          <!-- Search -->
+          <div class="block pull-t pull-x">
+            <div class="block-content block-content-full block-content-sm bg-body-light">
+              <form action="be_pages_generic_search.html" method="POST">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="side-overlay-search" name="side-overlay-search" placeholder="Search..">
+                  <button type="submit" class="btn btn-secondary">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </form>
             </div>
-
-            <div class="progress">
-              <span class="skill">Конкурент #1 <i class="val">20</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Конкурент #2 <i class="val">14</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
           </div>
+          <!-- END Search -->
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <p>Распаковка</p>
-            <div class="progress">
-              <span class="skill">WebLauncher <i class="val">67</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+          <!-- Mini Stats -->
+          <div class="block pull-x">
+            <div class="block-content block-content-full block-content-sm bg-body-light">
+              <div class="row text-center">
+                <div class="col-4">
+                  <div class="fs-sm fw-semibold text-uppercase text-muted">Clients</div>
+                  <div class="fs-4">460</div>
+                </div>
+                <div class="col-4">
+                  <div class="fs-sm fw-semibold text-uppercase text-muted">Sales</div>
+                  <div class="fs-4">728</div>
+                </div>
+                <div class="col-4">
+                  <div class="fs-sm fw-semibold text-uppercase text-muted">Earnings</div>
+                  <div class="fs-4">$7,860</div>
+                </div>
               </div>
             </div>
-
-            <div class="progress">
-              <span class="skill">Конкурент #1 <i class="val">41</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Конкурент #2 <i class="val">38</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
           </div>
+          <!-- END Mini Stats -->
+
+          <!-- Friends -->
+          <div class="block pull-x">
+            <div class="block-header bg-body-light">
+              <h3 class="block-title">
+                <i class="fa fa-fw fa-users opacity-50 me-1"></i> Friends
+              </h3>
+              <div class="block-options">
+                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                  <i class="si si-refresh"></i>
+                </button>
+                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
+              </div>
+            </div>
+            <div class="block-content">
+              <ul class="nav-users">
+                <li>
+                  <a href="be_pages_generic_profile.html">
+                    <img class="img-avatar" src="assets/media/avatars/avatar7.jpg" alt="">
+                    <i class="fa fa-circle text-success"></i>
+                    <div>Judy Ford</div>
+                    <div class="fw-normal fs-xs text-muted">Photographer</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="be_pages_generic_profile.html">
+                    <img class="img-avatar" src="assets/media/avatars/avatar11.jpg" alt="">
+                    <i class="fa fa-circle text-success"></i>
+                    <div>Jesse Fisher</div>
+                    <div class="fw-normal fs-xs text-muted">Web Designer</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="be_pages_generic_profile.html">
+                    <img class="img-avatar" src="assets/media/avatars/avatar4.jpg" alt="">
+                    <i class="fa fa-circle text-warning"></i>
+                    <div>Judy Ford</div>
+                    <div class="fw-normal fs-xs text-muted">UI Designer</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="be_pages_generic_profile.html">
+                    <img class="img-avatar" src="assets/media/avatars/avatar16.jpg" alt="">
+                    <div>Ryan Flores</div>
+                    <div class="fw-normal fs-xs text-muted">Copywriter</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- END Friends -->
+
+          <!-- Activity -->
+          <div class="block pull-x">
+            <div class="block-header bg-body-light">
+              <h3 class="block-title">
+                <i class="far fa-fw fa-clock opacity-50 me-1"></i> Activity
+              </h3>
+              <div class="block-options">
+                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                  <i class="si si-refresh"></i>
+                </button>
+                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
+              </div>
+            </div>
+            <div class="block-content">
+              <ul class="list list-activity mb-0">
+                <li>
+                  <i class="si si-wallet text-success"></i>
+                  <div class="fs-sm fw-semibold">+$29 New sale</div>
+                  <div class="fs-sm">
+                    <a href="javascript:void(0)">Admin Template</a>
+                  </div>
+                  <div class="fs-xs text-muted">5 min ago</div>
+                </li>
+                <li>
+                  <i class="si si-close text-danger"></i>
+                  <div class="fs-sm fw-semibold">Project removed</div>
+                  <div class="fs-sm">
+                    <a href="javascript:void(0)">Best Icon Set</a>
+                  </div>
+                  <div class="fs-xs text-muted">26 min ago</div>
+                </li>
+                <li>
+                  <i class="si si-pencil text-info"></i>
+                  <div class="fs-sm fw-semibold">You edited the file</div>
+                  <div class="fs-sm">
+                    <a href="javascript:void(0)">
+                      <i class="fa fa-file-alt"></i> Docs.doc
+                    </a>
+                  </div>
+                  <div class="fs-xs text-muted">3 hours ago</div>
+                </li>
+                <li>
+                  <i class="si si-plus text-success"></i>
+                  <div class="fs-sm fw-semibold">New user</div>
+                  <div class="fs-sm">
+                    <a href="javascript:void(0)">StudioWeb - View Profile</a>
+                  </div>
+                  <div class="fs-xs text-muted">5 hours ago</div>
+                </li>
+                <li>
+                  <i class="si si-wrench text-warning"></i>
+                  <div class="fs-sm fw-semibold">App v5.5 is available</div>
+                  <div class="fs-sm">
+                    <a href="javascript:void(0)">Update now</a>
+                  </div>
+                  <div class="fs-xs text-muted">8 hours ago</div>
+                </li>
+                <li>
+                  <i class="si si-user-follow text-pulse"></i>
+                  <div class="fs-sm fw-semibold">+1 Friend Request</div>
+                  <div class="fs-sm">
+                    <a href="javascript:void(0)">Accept</a>
+                  </div>
+                  <div class="fs-xs text-muted">1 day ago</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- END Activity -->
+
+          <!-- Profile -->
+          <div class="block pull-x">
+            <div class="block-header bg-body-light">
+              <h3 class="block-title">
+                <i class="fa fa-fw fa-pencil-alt opacity-50 me-1"></i> Profile
+              </h3>
+              <div class="block-options">
+                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
+              </div>
+            </div>
+            <div class="block-content block-content-full">
+              <form action="be_pages_dashboard.html" method="POST" onsubmit="return false;">
+                <div class="mb-3">
+                  <label class="form-label" for="side-overlay-profile-name">Name</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="side-overlay-profile-name" name="side-overlay-profile-name" placeholder="Your name.." value="John Smith">
+                    <span class="input-group-text">
+                      <i class="fa fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="side-overlay-profile-email">Email</label>
+                  <div class="input-group">
+                    <input type="email" class="form-control" id="side-overlay-profile-email" name="side-overlay-profile-email" placeholder="Your email.." value="john.smith@example.com">
+                    <span class="input-group-text">
+                      <i class="fa fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="side-overlay-profile-password">New Password</label>
+                  <div class="input-group">
+                    <input type="password" class="form-control" id="side-overlay-profile-password" name="side-overlay-profile-password" placeholder="New Password..">
+                    <span class="input-group-text">
+                      <i class="fa fa-asterisk"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="side-overlay-profile-password-confirm">Confirm New Password</label>
+                  <div class="input-group">
+                    <input type="password" class="form-control" id="side-overlay-profile-password-confirm" name="side-overlay-profile-password-confirm" placeholder="Confirm New Password..">
+                    <span class="input-group-text">
+                      <i class="fa fa-asterisk"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <button type="submit" class="btn btn-alt-primary">
+                      <i class="fa fa-sync opacity-50 me-1"></i> Update
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- END Profile -->
+
+          <!-- Settings -->
+          <div class="block pull-x">
+            <div class="block-header bg-body-light">
+              <h3 class="block-title">
+                <i class="fa fa-fw fa-wrench opacity-50 me-1"></i> Settings
+              </h3>
+              <div class="block-options">
+                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
+              </div>
+            </div>
+            <div class="block-content block-content-full">
+              <div class="mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="side-overlay-settings-security-status" name="side-overlay-settings-security-status" checked>
+                  <label class="form-check-label fw-medium" for="side-overlay-settings-security-status">Online Status</label>
+                  <div class="fs-sm text-muted">Show your status to all</div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="side-overlay-settings-security-verify" name="side-overlay-settings-security-verify">
+                  <label class="form-check-label fw-medium" for="side-overlay-settings-security-verify">Verify on Login</label>
+                  <div class="fs-sm text-muted">Most secure option</div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="side-overlay-settings-security-updates" name="side-overlay-settings-security-updates" checked>
+                  <label class="form-check-label fw-medium" for="side-overlay-settings-security-updates">Auto Updates</label>
+                  <div class="fs-sm text-muted">Keep app updated</div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="side-overlay-settings-security-notifications" name="side-overlay-settings-security-notifications" checked>
+                  <label class="form-check-label fw-medium" for="side-overlay-settings-security-notifications">Notifications</label>
+                  <div class="fs-sm text-muted">For every transaction</div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="side-overlay-settings-security-api" name="side-overlay-settings-security-api" checked>
+                  <label class="form-check-label fw-medium" for="side-overlay-settings-security-api">API Access</label>
+                  <div class="fs-sm text-muted">Enable access from third party apps</div>
+                </div>
+              </div>
+              <div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="side-overlay-settings-security-2fa" name="side-overlay-settings-security-2fa">
+                  <label class="form-check-label fw-medium" for="side-overlay-settings-security-2fa">Two Factor Auth</label>
+                  <div class="fs-sm text-muted">Using an authenticator</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END Settings -->
+        </div>
+        <!-- END Side Content -->
+      </aside>
+      <!-- END Side Overlay -->
+
+      <!-- Sidebar -->
+      <!--
+        Helper classes
+
+        Adding .smini-hide to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
+        Adding .smini-show to an element will make it visible (opacity: 1) when the sidebar is in mini mode
+          If you would like to disable the transition, just add the .no-transition along with one of the previous 2 classes
+
+        Adding .smini-hidden to an element will hide it when the sidebar is in mini mode
+        Adding .smini-visible to an element will show it only when the sidebar is in mini mode
+        Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
+      -->
+      <nav id="sidebar">
+        <!-- Sidebar Content -->
+        <div class="sidebar-content">
+          <!-- Side Header -->
+          <div class="content-header justify-content-lg-center">
+            <!-- Logo -->
+            <div>
+              <span class="smini-visible fw-bold tracking-wide fs-lg">
+                c<span class="text-primary">b</span>
+              </span>
+              <a class="link-fx fw-bold tracking-wide mx-auto" href="index.html">
+                <span class="smini-hidden">
+                  <i class="fa fa-fire text-primary"></i>
+                  <span class="fs-4 text-dual">code</span><span class="fs-4 text-primary">base</span>
+                </span>
+              </a>
+            </div>
+            <!-- END Logo -->
+
+            <!-- Options -->
+            <div>
+              <!-- Close Sidebar, Visible only on mobile screens -->
+              <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+              <button type="button" class="btn btn-sm btn-alt-danger d-lg-none" data-toggle="layout" data-action="sidebar_close">
+                <i class="fa fa-fw fa-times"></i>
+              </button>
+              <!-- END Close Sidebar -->
+            </div>
+            <!-- END Options -->
+          </div>
+          <!-- END Side Header -->
 
         </div>
-        <hr>
-        <div class="row skills-content">
+        <!-- Sidebar Content -->
+      </nav>
+      <!-- END Sidebar -->
 
-          <div class="col-lg-6" data-aos="fade-up">
-            <p>Общий коефиницент от старта загрузки от старта до завершения</p>
-            <div class="progress">
-              <span class="skill">WebLauncher <i class="val">94</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+      <!-- Header -->
+      <header id="page-header">
+        <!-- Header Content -->
+        <div class="content-header">
+          <!-- Left Section -->
+          <div class="space-x-1">
 
-            <div class="progress">
-              <span class="skill">Конкурент #1 <i class="val">53</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="53" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+            <div id="" class="d-none d-lg-block mt-2 mt-lg-0">
+              <ul class="nav-main nav-main-horizontal nav-main-hover">
 
-            <div class="progress">
-              <span class="skill">Конкурент #2 <i class="val">44</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+                <li class="nav-main-item">
+                  <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                    <i class="nav-main-link-icon fa fa-server"></i>
+                    <span class="nav-main-link-name"><b class="mainDomain text-success"></b> <b class="rateExp"></b> <b class="chronicle"></b> </span>
+                  </a>
+                  <ul class="nav-main-submenu">
 
-          </div>
+                    <li class="nav-main-item">
+                      <a class="nav-main-link registrationLink" href="#" target="_blank">
+                        <i class="nav-main-link-icon fa fa-plus"></i>
+                        <span class="nav-main-link-name">Регистрация</span>
+                      </a>
+                    </li>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <p>Коефициент скорости сравнения файлов</p>
-            <div class="progress">
-              <span class="skill">WebLauncher <i class="val">81</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+                    <li class="nav-main-item">
+                      <a class="nav-main-link descriptionLink" href="#" target="_blank">
+                        <i class="nav-main-link-icon fa fa-file-text"></i>
+                        <span class="nav-main-link-name">Описание</span>
+                      </a>
+                    </li>
 
-            <div class="progress">
-              <span class="skill">Конкурент #1 <i class="val">34</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+                    <li class="nav-main-item">
+                      <a class="nav-main-link forumLink" href="#" target="_blank">
+                        <i class="nav-main-link-icon fa fa-comments"></i>
+                        <span class="nav-main-link-name">Форум</span>
+                      </a>
+                    </li>
 
-            <div class="progress">
-              <span class="skill">Конкурент #2 <i class="val">28</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
+                  </ul>
+                </li>
 
-          </div>
 
-        </div>
 
-      </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="download" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Скачать лаунчер</h2>
-          <p>Скачайте лаунчер и пользуйтесь!</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Скачать</h3>
-            <div class="resume-item pb-0">
-              <h4>Launcher 0.1</h4>
-              <ul>
-                <li>Скачать для Windows x64</li>
-                <li>Скачать для Windows x32</li>
               </ul>
             </div>
 
 
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Минимальные требования</h3>
-            <div class="resume-item">
-              <h5>ОС: Windows 7</h5>
-            </div>
 
           </div>
-        </div>
+          <!-- END Left Section -->
 
-      </div>
-    </section><!-- End Resume Section -->
+          <!-- Right Section -->
+          <div class="space-x-1">
+            <!-- User Dropdown -->
+            <div class="dropdown d-inline-block">
+              <button type="button" class="btn btn-sm btn-alt-secondary" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user d-sm-none"></i>
 
-    <!-- ======= Нововведения в ланучере ======= -->
-    <section id="newFunc" class="resume">
-      <div class="container">
+                <div id="loaderConnect" class="spinner-border spinner-border-sm text-danger" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
 
-        <div class="section-title">
-          <h2>Нововведения</h2>
-          <p>Тут будут описаны новые функциональные возможности и фиксы!</p>
-        </div>
+                <span class="d-none d-sm-inline-block fw-semibold text-white" id="launcherConnectStatusName">Лаунчер</span>
 
-        <div class="row">
+                <i class="fa fa-angle-down opacity-50 ms-1"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-md dropdown-menu-end p-0" aria-labelledby="page-header-user-dropdown">
+                <div class="px-2 py-3 bg-body-light rounded-top">
+                  <h5 class="h6 text-center mb-0">
+                    Настройки
+                  </h5>
+                </div>
+                <div class="p-2">
+                  <label role="button" data-bs-toggle="modal" data-bs-target="#settings" class="dropdown-item d-flex align-items-center justify-content-between space-x-1" >
+                    <span>Настройки</span>
+                    <i class="fa fa-cogs opacity-25"></i>
+                  </label>
 
-          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+                  <label id="getClientWay" role="button" data-bs-toggle="modal" data-bs-target="#settingWay" class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
+                    <span>Пути к игре</span>
+                    <i class="fa fa-folder-open opacity-25"></i>
+                  </label>
+                  <div class="dropdown-divider"></div>
 
-            <div class="resume-item">
-              <h5>10.04.2023</h5>
-              <p><em>Информация о первой альфа-версии.</em></p>
-              <ul>
-                <li>Массовые загрузки (5 одновременных загрузок)</li>
-                <li>Админы могут создавать патчи прямо через SphereWeb CMS при включенном лаунчере</li>
-                <li>Выбор места загрузки файлов клиента</li>
-                <li>Вывод ошибки загрузки и прерывание загрузки, если http статус код не 200</li>
-                <li>Дополнительные доработки для ускоренния архивирования и распаковка файлов.</li>
-                <li>К файлам менее 50кб не применяется функция архивации.</li>
-                <li>Появился значок лаунчера в трее.</li>
-              </ul>
-            </div>
+                  <!-- Toggle Side Overlay -->
+                  <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                  <label role="button" data-bs-toggle="modal" data-bs-target="#isNeedUpdate" class="dropdown-item d-flex align-items-center justify-content-between space-x-1">
+                    <span>Обновления</span>
+                    <i class="fa fa-download opacity-25"></i>
+                  </label>
+                  <!-- END Side Overlay -->
 
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Для связи с разработчиком</h2>
-          <p>Если у Вас есть идеи предложения по развитию лаунчера или <a target="_blank" href="https://github.com/Cannabytes/SphereWeb">SphereWeb CMS</a>, тогда напиши мне :).</p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-telegram"></i>
-                <h4>Telegram: <a target="_blank" href="https://t.me/Cannabytes">@Cannabytes</a></h4>
-                <p>Пишите сразу по делу, не дожидаясь от меня ответный "Привет".</p>
+                  <div class="dropdown-divider"></div>
+                  <label role="button" data-bs-toggle="modal" data-bs-target="#launcherAbout" class="dropdown-item d-flex align-items-center justify-content-between space-x-1" >
+                    <span>О программе</span>
+                    <i class="fa fa-info-circle opacity-25"></i>
+                  </label>
+                </div>
               </div>
 
-            </div>
 
+              <button type="button" class="btn btn-sm btn-alt-secondary" id="lang-select" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-language"></i>
+              </button>
+
+              <div class="dropdown-menu dropdown-menu-md dropdown-menu-end p-0" aria-labelledby="lang-select">
+                <div class="px-2 py-3 bg-body-light rounded-top">
+                  <h5 class="h6 text-center mb-0">
+                    Language
+                  </h5>
+                </div>
+                <div class="p-2">
+                  <a class="dropdown-item d-flex align-items-center justify-content-between space-x-1" href="be_pages_generic_profile.html">
+                    <span>English</span>
+                    <img src="assets/flag/united-kingdom.png">
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
+                    <span>Español</span>
+                    <img src="assets/flag/spain.png">
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center justify-content-between space-x-1" href="be_pages_generic_invoice.html">
+                    <span>Português</span>
+                    <img src="assets/flag/portugal.png">
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center justify-content-between space-x-1" href="be_pages_generic_invoice.html">
+                    <span>Русский</span>
+                    <img src="assets/flag/russian.png">
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center justify-content-between space-x-1" href="be_pages_generic_invoice.html">
+                    <span>Türkçe</span>
+                    <img src="assets/flag/turkey.png">
+                  </a>
+
+                </div>
+              </div>
+
+
+            </div>
+            <!-- END User Dropdown -->
+
+          </div>
+          <!-- END Right Section -->
+        </div>
+        <!-- END Header Content -->
+
+
+        <!-- Header Loader -->
+        <!-- Please check out the Activity page under Elements category to see examples of showing/hiding it -->
+        <div id="page-header-loader" class="overlay-header bg-primary">
+          <div class="content-header">
+            <div class="w-100 text-center">
+              <i class="far fa-sun fa-spin text-white"></i>
+            </div>
+          </div>
+        </div>
+        <!-- END Header Loader -->
+      </header>
+
+      <main id="main-container">
+        <div class="content">
+           <div class="row items-push startL2">
+			<div class="col-sm-6 col-xl-12">
+              <a class="block block-rounded block-transparent bg-image d-flex align-items-stretch h-100 mb-0" href="javascript:void(0)" style="background-image: url('assets/media/photos/lineage2.jpg');">
+                <div class="block-content block-sticky-options pt-3 bg-black-50">
+                  <h2 class="h3 fw-bold text-white mb-1">Запустить игру</h2>
+                  <h3 class="fs-base fw-medium text-white-75">Нажмите чтоб начать играть</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-12 align-items-stretch">
+              <div class="block block-rounded block-themed block-mode-loading-dark block-transparent bg-image w-100" style="background-image: url('assets/media/photos/loadlineage.jpg');">
+                <div class="block-header bg-black-50">
+                 <h1 class="h1 fw-extrabold mb-1" id="processRunLevel">0<small class="text-white">%</small></h1>
+                  <label id="processName"></label>
+                  <div class="block-options">
+                    <div class="mb-4">
+                      <div class="input-group">
+                        <span class="input-group-text cursor-pointer" role="button" data-bs-toggle="modal" data-bs-target="#selectDirClient">
+                          <i class="fa fa-folder-open"></i>
+                        </span>
+                        <select class="form-select" id="selectClient" ></select>
+                        <button type="button" class="btn btn-secondary" data-toggle="click-ripple" onclick="startUpdate()" id="startUpdateGame" >Начать обновиться</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block-content bg-black-50 p-4" id="progressBarData">
+                </div>
+              </div>
+            </div>
+       
           </div>
 
 
-        </div>
+          <div class="row">
+            <!-- Row #3 -->
+            <div class="col-md-12">
+              <div class="block block-rounded block-bordered">
+                <div class="block-header block-header-default border-bottom">
+                  <h3 class="block-title">Лог</h3>
+                </div>
+                <div class="block-content">
+                  <table class="table table-borderless table-striped">
+                    <tbody id="eventNotification">
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+           </div>
 
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
 
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+          <div class="modal" id="selectDirClient" tabindex="-1" role="dialog" aria-labelledby="selectDirClient" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+              <div class="modal-content">
+                <div class="block block-rounded shadow-none mb-0">
+                  <div class="block-header block-header-default">
+                    <h3 class="block-title" id="dirfullpath"></h3>
+                    <div class="block-options">
+                      <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="block-content fs-sm" id="dirlist">
+                   </div>
+                  <div class="block-content block-content-full block-content-sm  border-top">
+                    <div class="block block-rounded block-link-shadow mb-3" href="javascript:void(0)">
+                        <p class="fs-sm fw-medium text-muted float-sm-end mb-1">
+                          <button type="button" class="btn btn-alt-primary saveDirClient" data-bs-dismiss="modal">
+                            Применить
+                          </button>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+                        </p>
+                          <div class="text-start ">
+                            Выберите папку клиента для <b class="chronicle">High Five</b>
+                          </div>
+                    </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-</body>
 
+          <div class="modal" id="settings" tabindex="-1" role="dialog" aria-labelledby="settings" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="block block-rounded shadow-none mb-0">
+                  <div class="block-header block-header-default">
+                    <h3 class="block-title">Настройки лаунчера</h3>
+                    <div class="block-options">
+                      <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="block-content fs-sm">
+
+
+                    <div class="block block-rounded row g-0 overflow-hidden">
+                      <ul class="nav nav-tabs nav-tabs-block flex-md-column col-md-3 rounded-0" role="tablist">
+                        <li class="nav-item d-md-flex flex-md-column">
+                          <button class="nav-link fs-sm text-md-start rounded-0 active" id="btabs-vertical-home-tab" data-bs-toggle="tab" data-bs-target="#btabs-vertical-home" role="tab" aria-controls="btabs-vertical-home" aria-selected="true">
+                            Файлы
+                          </button>
+                        </li>
+                        <li class="nav-item d-md-flex flex-md-column">
+                          <button class="nav-link fs-sm text-md-start rounded-0" id="btabs-vertical-profile-tab" data-bs-toggle="tab" data-bs-target="#btabs-vertical-profile" role="tab" aria-controls="btabs-vertical-profile" aria-selected="false">
+                            Автозагрузка
+                          </button>
+                        </li>
+                        <li class="nav-item d-md-flex flex-md-column">
+                          <button class="nav-link fs-sm text-md-start rounded-0" id="btabs-vertical-settings-tab" data-bs-toggle="tab" data-bs-target="#btabs-vertical-settings" role="tab" aria-controls="btabs-vertical-settings" aria-selected="false">
+                            Автообновление
+                          </button>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content col-md-9">
+                        <div class="block-content tab-pane active" id="btabs-vertical-home" role="tabpanel" aria-labelledby="btabs-vertical-home-tab" tabindex="0">
+                          <h4 class="fw-semibold">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" value="" id="isClientFilesArchive" name="isClientFilesArchive" checked>
+                                <label class="form-check-label" for="isClientFilesArchive">Сохранять загруженные файлы</label>
+                            </div>
+                          </h4>
+                          <p class="fs-sm">
+                            Если "Да", лаунчер будет сохранять файлы патчей, для того чтоб не загружать их в будущем в случае если когда-то ранее Вы его уже загружали.
+                            Данная опция может сократить время загрузки.
+                          </p>
+                        </div>
+                        <div class="block-content tab-pane" id="btabs-vertical-profile" role="tabpanel" aria-labelledby="btabs-vertical-profile-tab" tabindex="0">
+                          <h4 class="fw-semibold">
+
+                            <div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" value="" id="autoStartLauncher" name="autoStartLauncher">
+                              <label class="form-check-label" for="autoStartLauncher">Автозагрузка</label>
+                            </div>
+
+                          </h4>
+                          <p class="fs-sm">
+                            Лаунчер не нужно будет запускать, он не потербляет память. После старта Windows, лаунчер будет загружен в память, и срабатывать только при обращении к нему.
+                          </p>
+                        </div>
+                        <div class="block-content tab-pane" id="btabs-vertical-settings" role="tabpanel" aria-labelledby="btabs-vertical-settings-tab" tabindex="0">
+                          <h4 class="fw-semibold">
+
+                            <div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" value="" id="autoUpdateLauncher" name="autoUpdateLauncher">
+                              <label class="form-check-label" for="autoUpdateLauncher">Автообновление</label>
+                            </div>
+
+                          </h4>
+                          <p class="fs-sm">
+                            Лаунчер будет периодически проверять обновление, и обновляться если вышла новая версия.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+                   </div>
+                  <div class="block-content block-content-full block-content-sm text-end border-top">
+                    <button type="button" class="btn btn-alt-secondary" data-bs-dismiss="modal">
+                      Закрыть
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal" id="settingWay" tabindex="-1" role="dialog" aria-labelledby="settingWay" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+              <div class="modal-content">
+                <div class="block block-rounded shadow-none mb-0">
+                  <div class="block-header block-header-default">
+                    <h3 class="block-title">Настройка путей</h3>
+                    <div class="block-options">
+                      <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="block-content fs-sm">
+                      <div class="tab-content col-md-12 col-xxl-12" id="settingWayTableInfo">
+                      </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal" id="isNeedUpdate" tabindex="-1" role="dialog" aria-labelledby="isNeedUpdate" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+              <div class="modal-content">
+                <div class="block block-rounded shadow-none mb-0">
+                  <div class="block-header block-header-default">
+                    <h3 class="block-title">Обновление</h3>
+                    <div class="block-options">
+                      <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="block-content fs-sm">
+                   </div>
+                  <div class="block-content block-content-full block-content-sm text-end border-top">
+                    <button type="button" class="btn btn-alt-primary saveDirClient" data-bs-dismiss="modal">
+                      Применить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal" id="launcherAbout" tabindex="-1" role="dialog" aria-labelledby="launcherAbout" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+              <div class="modal-content">
+                <div class="block block-rounded shadow-none mb-0">
+                  <div class="block-header block-header-default">
+                    <h3 class="block-title">О программе</h3>
+                    <div class="block-options">
+                      <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="block-content fs-sm">
+                    Web-Launcher - это программа для обновления и загрузки файлов игры.<br>
+                    Лаунчер использует передовые технологии, для обеспечения максимальной скорости и удобства использования.<br>
+                    <br>
+                  </div>
+                  <div class="block-content block-content-full block-content-sm text-end border-top">
+                    <button type="button" class="btn btn-alt-primary saveDirClient" data-bs-dismiss="modal">
+                      OK
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="modal" id="modal-tabs-alternative" tabindex="-1" role="dialog" aria-labelledby="modal-tabs-alternative" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+              <div class="modal-content">
+                <div class="block block-rounded shadow-none mb-0">
+                  <ul class="nav nav-tabs nav-tabs-alt" role="tablist">
+                    <li class="nav-item">
+                      <button type="button" class="nav-link active" id="btabs-static-home-tab" data-bs-toggle="tab" data-bs-target="#btabs-static-home" role="tab" aria-controls="btabs-static-home" aria-selected="true">
+                        Home
+                      </button>
+                    </li>
+                    <li class="nav-item">
+                      <button type="button" class="nav-link" id="btabs-static-profile-tab" data-bs-toggle="tab" data-bs-target="#btabs-static-profile" role="tab" aria-controls="btabs-static-profile" aria-selected="false">
+                        Profile
+                      </button>
+                    </li>
+                    <li class="nav-item ms-auto">
+                      <button type="button" class="nav-link" id="btabs-static-settings-tab" data-bs-toggle="tab" data-bs-target="#btabs-static-settings" role="tab" aria-controls="btabs-static-settings" aria-selected="false">
+                        <i class="si si-settings"></i>
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="block-content tab-content">
+                    <div class="tab-pane active" id="btabs-static-home" role="tabpanel" aria-labelledby="btabs-static-home-tab" tabindex="0">
+                      <h5 class="fw-semibold">Home Content</h5>
+                      <p>...</p>
+                    </div>
+                    <div class="tab-pane" id="btabs-static-profile" role="tabpanel" aria-labelledby="btabs-static-profile-tab" tabindex="0">
+                      <h5 class="fw-semibold">Profile Content</h5>
+                      <p>...</p>
+                    </div>
+                    <div class="tab-pane" id="btabs-static-settings" role="tabpanel" aria-labelledby="btabs-static-settings-tab" tabindex="0">
+                      <h5 class="fw-semibold">Settings Content</h5>
+                      <p>...</p>
+                    </div>
+                  </div>
+                  <div class="block-content block-content-full block-content-sm text-end border-top">
+                    <button type="button" class="btn btn-alt-primary" data-bs-dismiss="modal">
+                      Применить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+	   </div>
+
+      </main>
+
+
+    </div>
+
+    <script src="assets/js/codebase.app.min.js"></script>
+
+    <script src="assets/js/plugins/chart.js/chart.umd.js"></script>
+
+    <!-- Page JS Code -->
+    <script src="assets/js/pages/be_pages_dashboard.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script>Codebase.helpersOnLoad(['jq-notify']);</script>
+    <script>Codebase.helpersOnLoad(['cb-table-tools-checkable', 'cb-table-tools-sections']);</script>
+    <script src="js/weblauncher.js"></script>
+  </body>
 </html>
