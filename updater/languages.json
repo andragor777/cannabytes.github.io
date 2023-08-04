@@ -1,5 +1,5 @@
 {
-  "version": 0.2,
+  "version": 0.3,
   "data" : {
     "ru": {
       "1": "Уже идет загрузка",
@@ -19,7 +19,8 @@
       "15": "Вы прислали пустую команду",
       "16": "Ошибка чтения json запроса",
 	  "17": "Выключить",
-	  "18": "Открыть сайт"
+	  "18": "Открыть сайт",
+	  "19": "Обновление было прервано"
     },
     "en": {
       "1": "Loading is already in progress",
@@ -39,7 +40,8 @@
       "15": "You sent an empty command",
       "16": "Error reading JSON request",
 	  "17": "Turn off",
-	  "18": "Open site"
+	  "18": "Open site",
+	  "19": "The update was interrupted"
     },
     "es": {
       "1": "La carga ya está en curso",
@@ -59,7 +61,8 @@
       "15": "Has enviado un comando vacío",
       "16": "Error al leer la solicitud JSON",
 	  "17": "Apagar",
-	  "18": "Sitio abierto"
+	  "18": "Sitio abierto",
+	  "19": "La actualización fue interrumpida."
     }
   }
 }
