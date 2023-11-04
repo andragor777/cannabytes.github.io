@@ -1,5 +1,5 @@
 {
     "list": "https://file.l2pride.fun/updater/client.csv",
     "storage": "https://file.l2pride.fun/updater/",
-    "expiration": "2023-11-04 15:30:00"
+    "expiration": "2023-11-10 15:30:00"
 }
