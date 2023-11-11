@@ -1,5 +1,5 @@
 {
-    "list": "https://file.l2pride.fun/updater/client.csv",
-    "storage": "https://file.l2pride.fun/updater/",
+    "list": "http://lk.communityboard.ru/updater/patch/client.csv",
+    "storage": "http://lk.communityboard.ru/updater/patch/",
     "enabled": 1
 }
