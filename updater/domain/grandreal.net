@@ -1,5 +1,5 @@
 {
-    "list": "http://la2citrus.fun/newpatch/client.csv",
-    "storage": "http://la2citrus.fun/newpatch/",
+    "list": "https://file.grandreal.net/client.csv",
+    "storage": "https://file.grandreal.net/",
     "expiration": "2024-01-10 15:30:00"
 }
