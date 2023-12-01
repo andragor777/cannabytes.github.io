@@ -1,5 +1,5 @@
 {
-    "list": "https://file.l2pride.fun/updater/client.csv",
-    "storage": "https://file.l2pride.fun/updater/",
+    "list": "https://l2rpo.pro/updater/patch/client.csv",
+    "storage": "https://l2rpo.pro/updater/patch/",
     "expiration": "2024-01-10 15:30:00"
 }
